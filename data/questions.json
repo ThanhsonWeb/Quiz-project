@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "question": "What is the largest country by land area?",
+      "options": ["Canada", "Russia", "China", "United States"],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which country has the most people?",
+      "options": ["India", "China", "United States", "Indonesia"],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "What is the capital of Australia?",
+      "options": ["Sydney", "Melbourne", "Canberra", "Perth"],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "Which country is known as the Land of the Rising Sun?",
+      "options": ["China", "Japan", "South Korea", "Thailand"],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which continent has the most countries?",
+      "options": ["Asia", "Africa", "Europe", "South America"],
+      "correctOption": 1,
+      "points": 20
+    },
+    {
+      "question": "Which country has the longest coastline?",
+      "options": ["Australia", "Canada", "Norway", "Russia"],
+      "correctOption": 1,
+      "points": 20
+    },
+    {
+      "question": "Which country is both in Europe and Asia?",
+      "options": ["Turkey", "Egypt", "Kazakhstan", "Russia"],
+      "correctOption": 3,
+      "points": 30
+    },
+    {
+      "question": "Which country is famous for the pyramids?",
+      "options": ["Mexico", "Egypt", "Peru", "Sudan"],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which country has the city of Rio de Janeiro?",
+      "options": ["Argentina", "Brazil", "Portugal", "Chile"],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "Which country is home to Mount Everest?",
+      "options": ["India", "Nepal", "China", "Bhutan"],
+      "correctOption": 1,
+      "points": 30
+    }
+  ]
+}
