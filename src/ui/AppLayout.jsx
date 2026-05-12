@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Main from "./Main";
+import Main from "../components/Main";
 import { Outlet } from "react-router-dom";
 function AppLayout() {
 	return (

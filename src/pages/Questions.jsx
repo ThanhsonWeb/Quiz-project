@@ -1,12 +1,17 @@
+import { QuizContext } from "../contexts/QuizContext";
+import { useContext } from "react";
+import Loading from "../ui/Loading";
+
 function Questions() {
-	return (
-		<div>
-			<h1>Hello Question here</h1>
-			<h1>Hello Question here</h1>
-			<h1>Hello Question here</h1>
-			<h1>Hello Question here</h1>
-		</div>
-	);
+	const { isLoading, questions } = useContext(QuizContext);
+
+	if (isLoading) return <Loading />;
+
+	return <div>
+
+
+
+   </div>;
 }
 
 export default Questions;

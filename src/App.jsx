@@ -1,4 +1,4 @@
-import AppLayout from "./components/AppLayout";
+import AppLayout from "./ui/AppLayout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StartScreen from "./pages/StartScreen";
 import Questions from "./pages/Questions";
