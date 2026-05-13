@@ -5,7 +5,7 @@ function QuizProvider({ children }) {
 	const [questions, setQuestions] = useState([]);
 	const [isLoading, setIsLoading] = useState(false);
 	const [index, setIndex] = useState(0);
-	//useEffect runs once on mount, fetches from your fake API, and updates state.
+	// fetch questions
 	useEffect(() => {
 		async function fetchQuestions() {
 			try {
@@ -24,7 +24,7 @@ function QuizProvider({ children }) {
 	}, []);
 
 	return (
-		<QuizContext.Provider value={{ questions, isLoading, index }}>
+		<QuizContext.Provider value={{ questions, isLoading, index, setIndex }}>
 			{children}
 		</QuizContext.Provider>
 	);

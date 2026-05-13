@@ -7,10 +7,12 @@ function Questions() {
 	if (isLoading) return <Loading />;
 
 	return (
-		<div>
-			{questions.length > 0 && <h4>{questions[index].question}</h4>}
+		<div className="w-[70%] mx-auto">
+			{questions.length > 0 && (
+				<h4 className="text-3xl font-semibold">{questions[index].question}</h4>
+			)}
 
-			<ul>
+			<ul className="mt-5 text-center text-2xl font-serif space-y-3">
 				{questions.length > 0 &&
 					questions[index].options.map((option, index) => (
 						<Option key={index} option={option} />
