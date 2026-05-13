@@ -10,6 +10,8 @@ const QuizContext = createContext();
 const initialState = {
 	questions: [],
 	isLoading: false,
+	status: "loading",
+	point: 0,
 	index: 0,
 };
 
@@ -17,12 +19,15 @@ function reducer(state, action) {
 	switch (action.type) {
 		case "dataReceived":
 			return { ...state, questions: action.payload, isLoading: false };
+
+		case "newAnswer":
+			return { ...state };
 		case "next":
 			return { ...state, index: state.index + 1 };
 		case "loading":
-			return { ...state, isLoading: true };
+			return { ...state, isLoading: true, status: "loading" };
 		case "error":
-			return { ...state, isLoading: false };
+			return { ...state, status: "error", isLoading: false };
 		default:
 			throw new Error("unknown case =))");
 	}
@@ -30,7 +35,7 @@ function reducer(state, action) {
 
 function QuizProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, initialState);
-	const { questions, isLoading, index } = state;
+	const { questions, isLoading, index, status, point } = state;
 
 	useEffect(() => {
 		async function fetchQuestions() {
@@ -48,7 +53,9 @@ function QuizProvider({ children }) {
 	}, []);
 
 	return (
-		<QuizContext.Provider value={{ questions, isLoading, index, dispatch }}>
+		<QuizContext.Provider
+			value={{ questions, isLoading, index, status, point, dispatch }}
+		>
 			{children}
 		</QuizContext.Provider>
 	);
