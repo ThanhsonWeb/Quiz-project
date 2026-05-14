@@ -21,7 +21,7 @@ function Questions() {
 						<Option
 							key={i}
 							option={option}
-							index={i}
+							optionIndex={i}
 							point={questions[i].points}
 							correctOption={questions[i].correctOption}
 						/>

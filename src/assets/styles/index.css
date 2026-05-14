@@ -14,3 +14,28 @@ body {
 	background-size: cover;
 	color: white;
 }
+
+.option {
+	background-color: #d6d3d1; /* stone-300 */
+	padding-top: 0.25rem; /* py-1 → 4px top */
+	padding-bottom: 0.25rem; /* py-1 → 4px bottom */
+	border-radius: 0.75rem; /* rounded-xl → 12px */
+	color: #000000; /* text-black */
+	cursor: pointer; /* cursor-pointer */
+}
+.option.answer {
+	transform: translateX(30px);
+}
+.option.correct {
+	background-color: rgb(97, 97, 215);
+	color: #fff;
+}
+
+.option.wrong {
+	background-color: rgb(227, 12, 12);
+	color: #fff;
+}
+
+.option.test {
+	background-color: #d6d3d1;
+}

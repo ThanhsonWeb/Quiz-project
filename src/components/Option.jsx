@@ -1,21 +1,29 @@
 import { useQuiz } from "../contexts/QuizContext";
 
-function Option({ option, index, point, correctOption }) {
-	const { dispatch } = useQuiz();
+function Option({ option, optionIndex, point, correctOption }) {
+	const { dispatch, answer, questions, index } = useQuiz();
+
+	const question = questions[index];
 
 	function handleClick() {
 		dispatch({
 			type: "newAnswer",
-			payload: index,
+			payload: optionIndex,
 			point: point,
 			correctOption,
 		});
 	}
 
+	const isSelected = answer === optionIndex;
+	const isCorrect = optionIndex === question.correctOption;
+
 	return (
 		<li
 			onClick={handleClick}
-			className="bg-stone-300 py-1 rounded-xl text-black cursor-pointer"
+			className={`option 
+      ${isSelected && "answer"} 
+      ${isSelected && isCorrect && "correct"} 
+      ${isSelected && !isCorrect && "wrong"}`}
 		>
 			{option}
 		</li>
