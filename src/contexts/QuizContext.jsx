@@ -35,7 +35,7 @@ function reducer(state, action) {
 		case "finish":
 			return { ...state, answer: null };
 		case "restart":
-			// return {...initialState }
+			return { ...state, answer: null, point: 0, index: 0 };
 		case "loading":
 			return { ...state, isLoading: true, status: "loading" };
 		case "error":
@@ -48,6 +48,8 @@ function reducer(state, action) {
 function QuizProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, initialState);
 	const { questions, isLoading, index, status, point, answer } = state;
+
+	const totalPoint = questions.reduce((acc, item) => acc + item.points, 0);
 
 	useEffect(() => {
 		async function fetchQuestions() {
@@ -67,7 +69,16 @@ function QuizProvider({ children }) {
 
 	return (
 		<QuizContext.Provider
-			value={{ questions, isLoading, index, status, point, answer, dispatch }}
+			value={{
+				questions,
+				isLoading,
+				index,
+				status,
+				point,
+				answer,
+				totalPoint,
+				dispatch,
+			}}
 		>
 			{children}
 		</QuizContext.Provider>
