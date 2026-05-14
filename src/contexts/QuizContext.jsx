@@ -32,6 +32,10 @@ function reducer(state, action) {
 			};
 		case "next":
 			return { ...state, index: state.index + 1, answer: null };
+		case "finish":
+			return { ...state, answer: null };
+		case "restart":
+			// return {...initialState }
 		case "loading":
 			return { ...state, isLoading: true, status: "loading" };
 		case "error":

@@ -6,17 +6,17 @@ function Progress() {
 	return (
 		<div className="my-9">
 			<progress
-				className="w-full rounded-2xl"
+				className="w-full "
 				value={index + 1}
 				min={0}
 				max={questions.length}
 			></progress>
 
-			<div className="flex justify-between items-center text-2xl font-semibold tracking-wide ">
+			<div className="flex justify-between items-center md:text-2xl text-xl font-medium tracking-wide font-serif ">
 				<p>
 					Questions : {index + 1}/{questions.length}
 				</p>
-				<p>{point} / 20</p>
+				<p>{point}/20</p>
 			</div>
 		</div>
 	);

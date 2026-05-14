@@ -7,16 +7,21 @@ function Footer() {
 
 	const navigate = useNavigate();
 
+	function handleFinish() {
+		navigate("/finish");
+		dispatch({ type: "finish" });
+	}
+
 	if (index === questions.length - 1)
 		return (
 			<div className="text-center mt-8">
-				{answer && <Button onClick={() => navigate("/finish")}>Finish</Button>}
+				{answer !== null && <Button onClick={handleFinish}>Finish</Button>}
 			</div>
 		);
 
 	return (
 		<div className="text-center mt-8">
-			{answer && (
+			{answer !== null && (
 				<Button onClick={() => dispatch({ type: "next" })}>Next</Button>
 			)}
 		</div>

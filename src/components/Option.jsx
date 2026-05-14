@@ -21,8 +21,8 @@ function Option({ option, optionIndex, point, correctOption }) {
 		<li
 			onClick={handleClick}
 			className={`option 
-      ${isSelected && "answer"} 
-      ${isSelected && isCorrect && "correct"} 
+      ${answer === optionIndex && "answer"} 
+      ${isSelected && optionIndex === question.correctOption && "correct"} 
       ${isSelected && !isCorrect && "wrong"}`}
 		>
 			{option}

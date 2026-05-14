@@ -23,8 +23,12 @@ body {
 	color: #000000; /* text-black */
 	cursor: pointer; /* cursor-pointer */
 }
+.option:hover {
+	box-shadow: 0 4px 16px #bfc4c4;
+}
+
 .option.answer {
-	transform: translateX(30px);
+	transform: translateX(10px);
 }
 .option.correct {
 	background-color: rgb(97, 97, 215);
@@ -38,4 +42,15 @@ body {
 
 .option.test {
 	background-color: #d6d3d1;
+}
+
+progress {
+	width: 100%;
+	height: 20px;
+	border-radius: 12px;
+	overflow: hidden; /* ensures inner bar respects rounding */
+}
+progress::-webkit-progress-value {
+	background-color: #02635b; /* blue-400 */
+	/* border-radius: 12px; */
 }
