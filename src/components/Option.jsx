@@ -1,10 +1,15 @@
 import { useQuiz } from "../contexts/QuizContext";
 
-function Option({ option }) {
+function Option({ option, index, point, correctOption }) {
 	const { dispatch } = useQuiz();
 
 	function handleClick() {
-		dispatch({ type: "newAnswer" });
+		dispatch({
+			type: "newAnswer",
+			payload: index,
+			point: point,
+			correctOption,
+		});
 	}
 
 	return (

@@ -17,8 +17,14 @@ function Questions() {
 
 			<ul className="mt-5 text-center text-2xl font-serif space-y-3">
 				{questions.length > 0 &&
-					questions[index].options.map((option, index) => (
-						<Option key={index} option={option} />
+					questions[index].options.map((option, i) => (
+						<Option
+							key={i}
+							option={option}
+							index={i}
+							point={questions[i].points}
+							correctOption={questions[i].correctOption}
+						/>
 					))}
 			</ul>
 		</div>

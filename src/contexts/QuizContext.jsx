@@ -11,6 +11,7 @@ const initialState = {
 	questions: [],
 	isLoading: false,
 	status: "loading",
+	answer: null,
 	point: 0,
 	index: 0,
 };
@@ -21,7 +22,14 @@ function reducer(state, action) {
 			return { ...state, questions: action.payload, isLoading: false };
 
 		case "newAnswer":
-			return { ...state };
+			const isCorrect =
+				action.payload === state.questions[state.index].correctOption;
+
+			return {
+				...state,
+				answer: action.payload, // store selected option index
+				point: isCorrect ? state.point + action.point : state.point,
+			};
 		case "next":
 			return { ...state, index: state.index + 1 };
 		case "loading":
@@ -35,7 +43,7 @@ function reducer(state, action) {
 
 function QuizProvider({ children }) {
 	const [state, dispatch] = useReducer(reducer, initialState);
-	const { questions, isLoading, index, status, point } = state;
+	const { questions, isLoading, index, status, point, answer } = state;
 
 	useEffect(() => {
 		async function fetchQuestions() {
@@ -43,6 +51,7 @@ function QuizProvider({ children }) {
 				dispatch({ type: "loading" });
 				const res = await fetch("http://localhost:9000/questions");
 				const data = await res.json();
+				console.log(data);
 				dispatch({ type: "dataReceived", payload: data });
 			} catch (err) {
 				console.error("fetch to fetch Data", err.message);
@@ -54,7 +63,7 @@ function QuizProvider({ children }) {
 
 	return (
 		<QuizContext.Provider
-			value={{ questions, isLoading, index, status, point, dispatch }}
+			value={{ questions, isLoading, index, status, point, answer, dispatch }}
 		>
 			{children}
 		</QuizContext.Provider>
