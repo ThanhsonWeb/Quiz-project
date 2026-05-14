@@ -31,7 +31,7 @@ function reducer(state, action) {
 				point: isCorrect ? state.point + action.point : state.point,
 			};
 		case "next":
-			return { ...state, index: state.index + 1};
+			return { ...state, index: state.index + 1, answer: null };
 		case "loading":
 			return { ...state, isLoading: true, status: "loading" };
 		case "error":

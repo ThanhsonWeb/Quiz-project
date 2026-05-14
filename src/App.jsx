@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import StartScreen from "./pages/StartScreen";
 import Questions from "./pages/Questions";
 import Error from "./ui/Error";
+import FinishScreen from "./pages/FinishScreen";
 
 const router = createBrowserRouter([
 	{
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
 		children: [
 			{ index: true, element: <StartScreen /> },
 			{ path: "questions", element: <Questions /> },
-			// { path: "finish", element: <FinishScreen /> },
+			{ path: "finish", element: <FinishScreen /> },
 		],
 	},
 ]);
