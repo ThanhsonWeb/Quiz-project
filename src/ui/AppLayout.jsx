@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 function AppLayout() {
 	return (
-		<div className="app w-[80%] p-3">
+		<div className="app w-[80%]  p-3">
 			<Header />
 			<Main>
 				<Outlet />

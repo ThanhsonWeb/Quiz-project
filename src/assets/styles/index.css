@@ -29,6 +29,7 @@ body {
 
 .option.answer {
 	transform: translateX(10px);
+	padding: 11px;
 }
 .option.correct {
 	background-color: rgb(97, 97, 215);

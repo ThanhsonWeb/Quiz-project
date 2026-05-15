@@ -7,7 +7,7 @@ function Progress() {
 		<div className="my-9">
 			<progress
 				className="w-full "
-				value={index + 1}
+				value={index + 1 }
 				min={0}
 				max={questions.length }
 			></progress>

@@ -1,6 +1,6 @@
 import { useQuiz } from "../contexts/QuizContext";
 
-function Option({ option, optionIndex, point, correctOption }) {
+function Option({ option, optionIndex }) {
 	const { dispatch, answer, questions, index } = useQuiz();
 
 	const question = questions[index];
@@ -9,8 +9,6 @@ function Option({ option, optionIndex, point, correctOption }) {
 		dispatch({
 			type: "newAnswer",
 			payload: optionIndex,
-			point: point,
-			correctOption,
 		});
 	}
 
