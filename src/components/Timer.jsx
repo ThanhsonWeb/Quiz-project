@@ -13,6 +13,7 @@ function Timer() {
 	useEffect(() => {
 		if (secondsLeft === 0) {
 			navigate("/finish");
+			return;
 		}
 
 		const id = setInterval(() => {

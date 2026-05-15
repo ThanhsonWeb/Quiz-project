@@ -19,7 +19,7 @@ const initialState = {
 };
 
 
-const SECS_PER_QUESTION = 30;
+const SECS_PER_QUESTION = 15;
 function reducer(state, action) {
 	switch (action.type) {
 		case "dataReceived":
