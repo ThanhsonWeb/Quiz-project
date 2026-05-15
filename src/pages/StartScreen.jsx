@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function StartScreen() {
 	const navigate = useNavigate();
-	const { dispatch } = useQuiz();
+	const { dispatch, questions } = useQuiz();
 
 	function handleClick() {
 		navigate("/questions");
@@ -12,9 +12,11 @@ function StartScreen() {
 	}
 
 	return (
-		<div className="text-center font-semibold  h-[30vh] md:text-3xl text-2xl">
-			<h1 className="md:text-4xl text-2xl">Welcome to the real World</h1>
-			<h2 className="my-3">15 questions is waiting for you</h2>
+		<div className="text-center font-semibold  h-[30vh] ">
+			<h1 className="md:text-4xl text-3xl">Welcome to the real World</h1>
+			<h2 className="my-3 md:text-3xl text-xl">
+				{questions.length} questions is waiting for you
+			</h2>
 			<Button onClick={handleClick}>Start now</Button>
 		</div>
 	);

@@ -15,18 +15,22 @@ function Footer() {
 
 	if (index === questions.length - 1)
 		return (
-			<div className="text-center mt-8 flex justify-around text-3xl ">
+			<div className="text-center mt-8 flex justify-around md:text-3xl ">
 				{status === "active" && <Timer />}
 
-				{answer !== null && <Button onClick={handleFinish}>Finish</Button>}
+				<div className="ml-auto">
+					{answer !== null && <Button onClick={handleFinish}>Finish</Button>}
+				</div>
 			</div>
 		);
 
 	return (
-		<div className="text-center mt-8 flex justify-around text-3xl">
+		<div className="text-center mt-8 flex  md:text-3xl ">
 			{status === "active" && <Timer />}
 			{answer !== null && (
-				<Button onClick={() => dispatch({ type: "next" })}>Next</Button>
+				<div className="ml-auto">
+					<Button onClick={() => dispatch({ type: "next" })}>Next</Button>
+				</div>
 			)}
 		</div>
 	);

@@ -6,7 +6,7 @@ function Header() {
 			<Link to="/">
 				<img src={logo} alt="logo" className="md:h-30 h-20 rounded-full mr-10" />
 			</Link>
-			<h1 className="lg:text-7xl md:text-5xl text-3xl whitespace-nowrap font-semibold font-serif">
+			<h1 className="lg:text-7xl md:text-5xl text-3xl md:whitespace-nowrap font-semibold font-serif ml-4 ">
 				Geology Questions
 			</h1>
 		</div>

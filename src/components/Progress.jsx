@@ -9,7 +9,7 @@ function Progress() {
 				className="w-full "
 				value={index + 1 }
 				min={0}
-				max={questions.length }
+				max={questions.length + 1}
 			></progress>
 
 			<div className="flex justify-between items-center md:text-2xl text-xl font-medium tracking-wide font-serif ">

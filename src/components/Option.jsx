@@ -6,6 +6,7 @@ function Option({ option, optionIndex }) {
 	const question = questions[index];
 
 	function handleClick() {
+		if (answer !== null) return;
 		dispatch({
 			type: "newAnswer",
 			payload: optionIndex,
@@ -18,10 +19,12 @@ function Option({ option, optionIndex }) {
 	return (
 		<li
 			onClick={handleClick}
-			className={`option 
+			className={`option text-xl md:text-2xl
       ${answer === optionIndex && "answer"} 
       ${isSelected && optionIndex === question.correctOption && "correct"} 
-      ${isSelected && !isCorrect && "wrong"}`}
+      ${isSelected && !isCorrect && "wrong"}
+		${answer !== null && isCorrect ? "correct" : ""}
+		`}
 		>
 			{option}
 		</li>

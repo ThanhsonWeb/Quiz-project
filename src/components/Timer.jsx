@@ -13,7 +13,7 @@ function Timer() {
 	useEffect(() => {
 		if (secondsLeft === 0) {
 			navigate("/finish");
-			return;
+			// return;
 		}
 
 		const id = setInterval(() => {
@@ -26,7 +26,7 @@ function Timer() {
 	}, [navigate, secondsLeft, dispatch]);
 
 	return (
-		<div className="p-3 text-3xl font-semibold bg-amber-50 text-black rounded-xl">
+		<div className="p-3 md:text-3xl font-semibold bg-amber-50 text-black rounded-xl">
 			{mins < 10 && "0"}
 			{mins} : {seconds < 10 && "0"}
 			{seconds}

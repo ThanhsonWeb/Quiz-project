@@ -1,6 +1,5 @@
 import {
 	useEffect,
-	useState,
 	createContext,
 	useContext,
 	useReducer,
@@ -48,7 +47,7 @@ function reducer(state, action) {
 				point: isCorrect ? state.point + question.points : state.point,
 			};
 		case "next":
-			// if (answer === null) return state;
+			
 			return { ...state, index: state.index + 1, answer: null };
 		case "finish":
 			return { ...state, answer: null, status: "finish" };
