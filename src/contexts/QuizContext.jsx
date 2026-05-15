@@ -18,6 +18,7 @@ const initialState = {
 	secondsLeft: null,
 };
 
+
 const SECS_PER_QUESTION = 30;
 function reducer(state, action) {
 	switch (action.type) {

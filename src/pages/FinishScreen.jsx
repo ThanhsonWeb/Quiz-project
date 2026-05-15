@@ -7,7 +7,7 @@ function FinishScreen() {
 
 	const navigate = useNavigate();
 
-	function handleRestart() {
+	function handleReset() {
 		dispatch({ type: "reset" });
 		navigate("/");
 	}
@@ -19,19 +19,19 @@ function FinishScreen() {
 	else if (point <= 120) icon = "😊";
 	else icon = "🏆";
 
-	return (
-		<div className="h-[50vh]">
-			<div className="p-3 bg-blue-50 rounded-2xl mb-9 relative  ">
-				<h2 className="md:text-3xl text-2xl font-semibold text-blue-900  text-center">
-					{icon} Your score is {point}/{totalPoint} <br />
-					"Điểm của bro là {point}/{totalPoint}"
-				</h2>
+		return (
+			<div className="h-[50vh]">
+				<div className="p-3 bg-blue-50 rounded-2xl mb-9 relative  ">
+					<h2 className="md:text-3xl text-2xl font-semibold text-blue-900  text-center">
+						{icon} Your score is {point}/{totalPoint} <br />
+						"Điểm của bro là {point}/{totalPoint}"
+					</h2>
+				</div>
+				<div className="absolute right-[30%]">
+					<Button onClick={handleReset}>Restart</Button>
+				</div>
 			</div>
-			<div className="absolute right-[30%]">
-				<Button onClick={handleRestart}>Restart</Button>
-			</div>
-		</div>
-	);
+		);
 }
 
 export default FinishScreen;
